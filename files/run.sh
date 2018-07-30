@@ -17,7 +17,7 @@ if [ -z $PROXY_PASS ]; then
   exit 1
 fi
 
-htpasswd -b /etc/nginx/.htpasswd $BASIC_AUTH_USERNAME $BASIC_AUTH_PASSWORD
+htpasswd -cb /etc/nginx/.htpasswd $BASIC_AUTH_USERNAME $BASIC_AUTH_PASSWORD
 sed \
   -e "s/##CLIENT_MAX_BODY_SIZE##/$CLIENT_MAX_BODY_SIZE/g" \
   -e "s/##PROXY_READ_TIMEOUT##/$PROXY_READ_TIMEOUT/g" \

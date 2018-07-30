@@ -3,7 +3,8 @@ services:
   web:
     image: tutum/hello-world:latest
     ports:
-      - "8080:80"
+      - "8081:80"
+
   nginx:
     build: .
     ports:
