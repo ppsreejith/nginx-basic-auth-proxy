@@ -1,8 +1,10 @@
-FROM nginx:1.11.9-alpine
+FROM nginx:latest
 
 # for htpasswd command
-RUN apk add --no-cache --update \
-      apache2-utils
+RUN apt-get update && \
+    apt-get dist-upgrade -y && \
+    apt-get install --no-install-recommends -y apache2-utils && \
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN rm -f /etc/nginx/conf.d/*
 
 ENV SERVER_NAME example.com

@@ -3,7 +3,7 @@ services:
   web:
     image: tutum/hello-world:latest
   nginx:
-    image: quay.io/dtan4/nginx-basic-auth-proxy:latest
+    build: .
     ports:
       - 8080:80
       - 8090:8090
